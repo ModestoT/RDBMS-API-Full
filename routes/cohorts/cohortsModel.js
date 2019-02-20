@@ -21,8 +21,8 @@ function getById(id) {
 
 function getCohortsStudents(cohortsId) {
     return db('students')
-        .join('cohorts')
-        .on(`students.cohorts_id = cohorts.id`)
+        .join('cohorts', 'cohorts.id', 'students.cohorts_id')
+        .select('students.id', 'students.name')
         .where('students.cohorts_id', cohortsId);
 }
 
@@ -30,7 +30,7 @@ function insert(cohort) {
     return db('cohorts')
         .insert(cohort)
         .then(id => {
-            return getByid(id);
+            return getById(id[0]);
         });
 }
 
