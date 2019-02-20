@@ -1,5 +1,5 @@
 {
-  "name": "RDBMS-API-Full",
+  "name": "rdms-api-full",
   "version": "1.0.0",
   "description": "RDBMS API",
   "main": "index.js",
