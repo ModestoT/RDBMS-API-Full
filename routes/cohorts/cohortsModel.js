@@ -2,7 +2,7 @@ const db = require('../../db/dbconfig.js');
 
 module.exports = {
     get,
-    getByid,
+    getById,
     getCohortsStudents,
     insert,
     update,
@@ -13,7 +13,7 @@ function get() {
     return db('cohorts');
 }
 
-function getByid(id) {
+function getById(id) {
     return db('cohorts')
         .where({ id })
         .first();
