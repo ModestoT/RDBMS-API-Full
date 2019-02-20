@@ -22,7 +22,8 @@ function getById(id) {
 function getCohortsStudents(cohortsId) {
     return db('students')
         .join('cohorts')
-        .on(`students.cohort_id = ${cohortsId}`)
+        .on(`students.cohorts_id = cohorts.id`)
+        .where('students.cohorts_id', cohortsId);
 }
 
 function insert(cohort) {
