@@ -24,7 +24,7 @@ function getCohortsStudents(cohortsId) {
         .join('cohorts', 'cohorts.id', 'students.cohorts_id')
         .select('students.id', 'students.name')
         .where('students.cohorts_id', cohortsId);
-}
+    }
 
 function insert(cohort) {
     return db('cohorts')
